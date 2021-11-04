@@ -40,6 +40,9 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
+# API
+PRODUCT_SHIPPING_API_LEVEL := 30
+
 # HACK: Set vendor patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31 \
