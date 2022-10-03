@@ -16,6 +16,9 @@
 
 LOCAL_PATH := device/volla/mimameid
 
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
