@@ -8,7 +8,6 @@
 /vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display="VBMeta"
 
 /data                     ext4     /dev/block/platform/bootdevice/by-name/userdata          flags=display="Data"
-/mnt/vendor/persist       ext4     /dev/block/platform/bootdevice/by-name/persist           flags=display="Persist"
 
 auto                      auto     /devices/platform/externdevice*                          flags=display="External Storage";storage;wipeingui;removable
-auto                      vfat     /devices/platform/mt_usb*                                flags=display="USB-OTG";storage;wipeingui;removable
+auto                      auto     /devices/platform/mt_usb*                                flags=display="USB-OTG";storage;wipeingui;removable
