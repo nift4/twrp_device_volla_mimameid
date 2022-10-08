@@ -1,20 +1,14 @@
-/system                   ext4     system                                                   flags=display=system;logical;slotselect
-/vendor                   ext4     vendor                                                   flags=display=vendor;logical;slotselect
-/product                  ext4     product                                                  flags=display=product;logical;slotselect
-/boot                     emmc     /dev/block/platform/bootdevice/by-name/boot              flags=display=boot;slotselect
-/vbmeta_vendor            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display=vbmeta_vendor;slotselect
-/vbmeta_system            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display=vbmeta_system;slotselect
-/dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display=dtbo
-/vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display=vbmeta
+/system                   ext4     system                                                   flags=display="System";logical;slotselect
+/vendor                   ext4     vendor                                                   flags=display="Vendor";logical;slotselect
+/product                  ext4     product                                                  flags=display="Product";logical;slotselect
+/boot                     emmc     /dev/block/platform/bootdevice/by-name/boot              flags=display="Boot image";slotselect
+/vbmeta_vendor            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="VBMeta (Vendor)";slotselect
+/vbmeta_system            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display="VBMeta (System)";slotselect
+/dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="Device Tree Overlay"
+/vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display="VBMeta"
 
-/data                     ext4     /dev/block/platform/bootdevice/by-name/userdata          flags=display=data
-/mnt/vendor/persist       ext4     /dev/block/platform/bootdevice/by-name/persist           flags=display=persist
-
-/nvram                    emmc     /dev/block/platform/bootdevice/by-name/nvram             flags=display=nvram
-/mnt/vendor/protect_f     ext4     /dev/block/platform/bootdevice/by-name/protect1          flags=display=protect_f
-/mnt/vendor/protect_s     ext4     /dev/block/platform/bootdevice/by-name/protect2          flags=display=protect_s
-/mnt/vendor/nvdata        ext4     /dev/block/platform/bootdevice/by-name/nvdata            flags=display=nvdata
-/mnt/vendor/nvcfg         ext4     /dev/block/platform/bootdevice/by-name/nvcfg             flags=display=nvcfg
+/data                     ext4     /dev/block/platform/bootdevice/by-name/userdata          flags=display="Data"
+/mnt/vendor/persist       ext4     /dev/block/platform/bootdevice/by-name/persist           flags=display="Persist"
 
 auto                      auto     /devices/platform/externdevice*                          flags=display="External Storage";storage;wipeingui;removable
 auto                      vfat     /devices/platform/mt_usb*                                flags=display="USB-OTG";storage;wipeingui;removable
