@@ -1,3 +1,6 @@
+import /init.mt6768.usb.rc
+import /init.usb.configfs.rc
+
 on init
     setprop sys.usb.configfs 1
     setprop sys.usb.ffs.aio_compat 0
