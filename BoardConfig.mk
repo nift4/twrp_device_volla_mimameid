@@ -106,7 +106,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -140,12 +139,21 @@ TW_Y_OFFSET := 81
 TW_H_OFFSET := -81
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
+#TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 128
 TW_EXCLUDE_APEX := true
+# TODO: drop below excludes if possible
 TW_EXCLUDE_NANO := true
+#TW_EXCLUDE_TZDATA := true
+TW_EXCLUDE_BASH := true
+# TODO: try to make space for this
+#TW_EXTRA_LANGUAGES := true
+#TW_INCLUDE_NTFS_3G := true
+#TW_INCLUDE_RESETPROP := true
+#TW_INCLUDE_FB2PNG := true
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true

@@ -1,13 +1,15 @@
-/system                   ext4     system                                                   flags=display="System";logical;slotselect
-/vendor                   ext4     vendor                                                   flags=display="Vendor";logical;slotselect
-/product                  ext4     product                                                  flags=display="Product";logical;slotselect
-/boot                     emmc     /dev/block/platform/bootdevice/by-name/boot              flags=display="Boot image";slotselect
-/vbmeta_vendor            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="VBMeta (Vendor)";slotselect
-/vbmeta_system            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display="VBMeta (System)";slotselect
-/dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="Device Tree Overlay"
-/vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display="VBMeta"
+/system                   ext4     system                                                   flags=display="System";logical;slotselect;backup=1;flashimg=1
+/vendor                   ext4     vendor                                                   flags=display="Vendor";logical;slotselect;backup=1;flashimg=1
+/product                  ext4     product                                                  flags=display="Product";logical;slotselect;backup=1;flashimg=1
 
-/data                     ext4     /dev/block/platform/bootdevice/by-name/userdata          flags=display="Data"
+/data                     ext4     /dev/block/platform/bootdevice/by-name/userdata          flags=display="Data";fileencryption=aes-256-xts:aes-256-cts:v2;keydirectory=/metadata/vold/metadata_encryption
+
+/metadata                 ext4     /dev/block/platform/bootdevice/by-name/md_udc            flags=mounttodecrypt;display="Metadata";backup=1;flashimg=1
+/boot                     emmc     /dev/block/platform/bootdevice/by-name/boot              flags=display="Boot image";slotselect;backup=1;flashimg=1
+/vbmeta_vendor            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_vendor     flags=display="VBMeta (Vendor)";slotselect;backup=1;flashimg=1
+/vbmeta_system            emmc     /dev/block/platform/bootdevice/by-name/vbmeta_system     flags=display="VBMeta (System)";slotselect;backup=1;flashimg=1
+/dtbo                     emmc     /dev/block/platform/bootdevice/by-name/dtbo              flags=display="Device Tree Overlay";backup=1;flashimg=1
+/vbmeta                   emmc     /dev/block/platform/bootdevice/by-name/vbmeta            flags=display="VBMeta";backup=1;flashimg=1
 
 auto                      auto     /devices/platform/externdevice*                          flags=display="External Storage";storage;wipeingui;removable
 auto                      auto     /devices/platform/mt_usb*                                flags=display="USB-OTG";storage;wipeingui;removable
