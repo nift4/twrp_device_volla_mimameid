@@ -145,10 +145,10 @@ TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 128
 TW_EXCLUDE_APEX := true
-# TODO: drop below excludes if possible
+# bash depends on ncurses which is only built with nano, and ncurses ships 13mb terminfo which is still a lot when compressed.
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_BASH := true
-# TODO: try to make space for this
+# We have no space for any of this if we want to be able to flash Magisk.
 #TW_EXTRA_LANGUAGES := true
 #TW_INCLUDE_NTFS_3G := true
 #TW_INCLUDE_RESETPROP := true
