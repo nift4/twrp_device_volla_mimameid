@@ -24,6 +24,7 @@ service teei_daemon /vendor/bin/teei_daemon \
     class core
     user system
     group system
+    seclabel u:r:recovery:s0 #nift4: fix recovery teei_daemon
     disabled
    # oneshot
 
